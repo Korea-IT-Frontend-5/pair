@@ -1,19 +1,18 @@
-import UseCallback from './hooks/useCallback';
-import UseEffect from './hooks/useEffect';
-import UseMemo from './hooks/useMemo';
-import UseRef from './hooks/useRef';
-import UseState from './hooks/useState';
+import { RouterProvider } from 'react-router-dom';
+
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './styles/global';
+
+import theme from './styles/theme';
+import router from './routes/routing';
 
 function App() {
+
   return (
-    <>
-      <UseState />
-      <UseRef />
-      <UseMemo />
-      <UseCallback />
-      <UseEffect />
-    </>
+    <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
-
 export default App;
