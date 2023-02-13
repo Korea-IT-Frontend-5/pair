@@ -1,13 +1,13 @@
-import React from 'react'
+import * as S from './style';
 
 function Button(props) {
-  const {children} = props;
+  const {size, variant, children, ...rest } = props;
 
   return (
     <>
-      <button>
+      <S.Button variant={variant} size={size} {...rest}>
         {children}
-      </button>
+      </S.Button>
     </>
   )
 }
